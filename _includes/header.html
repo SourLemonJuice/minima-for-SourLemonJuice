@@ -29,3 +29,8 @@
     {%- endif -%}
   </div>
 </header>
+{%- if jekyll.environment != "production" -%}
+<p style="text-align: center; font-size: large; color: #e97161; border-block-end: 0.1px solid #e97161;">
+  NOTE: This static site was built in non-production environment.
+</p>
+{%- endif -%}

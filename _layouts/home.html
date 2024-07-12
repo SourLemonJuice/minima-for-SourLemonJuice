@@ -9,6 +9,8 @@ layout: base
 
   {{ content }}
 
+  <!-- 在列表和正文之间加一条分割线 -->
+  <hr>
 
   {% if site.paginate %}
     {% assign posts = paginator.posts %}
