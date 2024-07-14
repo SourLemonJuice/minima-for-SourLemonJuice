@@ -196,6 +196,7 @@ pre {
 
 /**
  * Wrapper
+ * for content that needs to be read
  */
 .wrapper {
   max-width: calc(#{$content-width} - (#{$spacing-unit}));
@@ -207,6 +208,22 @@ pre {
 
   @media screen and (min-width: $on-large) {
     max-width: calc(#{$content-width} - (#{$spacing-unit} * 2));
+    padding-right: $spacing-unit;
+    padding-left: $spacing-unit;
+  }
+}
+
+
+.wrapper-sidebar {
+  max-width: calc(1200px - (#{$spacing-unit}));
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $spacing-unit * .5;
+  padding-left: $spacing-unit * .5;
+  @extend %clearfix;
+
+  @media screen and (min-width: $on-large) {
+    max-width: calc(1200px - (#{$spacing-unit} * 2));
     padding-right: $spacing-unit;
     padding-left: $spacing-unit;
   }
