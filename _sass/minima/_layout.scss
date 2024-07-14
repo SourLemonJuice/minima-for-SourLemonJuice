@@ -157,6 +157,13 @@
   color: $brand-color;
 }
 
+.footer-custom {
+  @include relative-font-size(0.9375);
+  color: $brand-color;
+  text-align: center;
+  margin: 0 0 15px 0;
+}
+
 .footer-col {
   margin-bottom: $spacing-unit * .5;
 }
