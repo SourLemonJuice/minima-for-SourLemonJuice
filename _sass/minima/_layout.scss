@@ -193,11 +193,13 @@
 
 @media screen and (min-width: $on-medium) {
   .footer-col-wrapper {
-    display: flex
+    display: flex;
+    justify-content: space-between;
   }
 
   .footer-col {
-    width: calc(100% - (#{$spacing-unit} / 2));
+    width: 50%;
+    max-width: 420px;
     padding: 0 ($spacing-unit * .5);
 
     &:first-child {
