@@ -23,11 +23,11 @@ layout: base
         </time>
       {%- endif -%}
 
-      {%- if page.tags -%}
+      {%- if page.show_tags -%}
         <br>
         Tags: {% for tag in page.tags %}
           {{ tag }}
-          {%- if forloop.last == false %}, {% endif -%}
+          {%- unless forloop.last %}, {% endunless -%}
         {% endfor %}
       {%- endif -%}
 
@@ -36,7 +36,7 @@ layout: base
         By {% for author in page.author %}
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
             <span class="p-author h-card" itemprop="name">{{ author }}</span></span>
-            {%- if forloop.last == false %}, {% endif -%}
+            {%- unless forloop.last %}, {% endunless -%}
         {% endfor %}
       {%- endif -%}
 
