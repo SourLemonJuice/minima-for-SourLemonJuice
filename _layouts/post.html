@@ -8,10 +8,12 @@ layout: base
     <p class="post-meta">
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       {%- assign date_format_no_hour = site.minima.date_format_no_hour | default: date_format -%}
+
       Published:
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
         {{ page.date | date: date_format_no_hour }}
       </time>
+
       {%- if page.has_modified -%}
         <br>
         Modified:
@@ -20,6 +22,15 @@ layout: base
           {{ mdate | date: date_format }}
         </time>
       {%- endif -%}
+
+      {%- if page.tags -%}
+        <br>
+        Tags: {% for tag in page.tags %}
+          {{ tag }}
+          {%- if forloop.last == false %}, {% endif -%}
+        {% endfor %}
+      {%- endif -%}
+
       {%- if page.author -%}
         <br>
         By {% for author in page.author %}
@@ -27,6 +38,11 @@ layout: base
             <span class="p-author h-card" itemprop="name">{{ author }}</span></span>
             {%- if forloop.last == false %}, {% endif -%}
         {% endfor %}
+      {%- endif -%}
+
+      {%- if page.noindex -%}
+        <br><br>
+        > Noindex enabled on this page
       {%- endif -%}
     </p>
   </header>
