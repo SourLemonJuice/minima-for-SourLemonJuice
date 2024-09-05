@@ -27,7 +27,7 @@ layout: base
       <li>
         <span class="post-meta">
           {{ post.date | date: date_format_no_hour }}
-          {%- if post.has_modified -%}
+          {% if post.has_modified -%}
             | Modified: {{ post.last_modified_at | date: date_format }}
           {%- endif -%}
         </span>
