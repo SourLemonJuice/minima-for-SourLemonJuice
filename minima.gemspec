@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name     = "minima-for-SourLemonJuice"
-  spec.version  = "3.0.0-lemon.dev"
+  spec.version  = "3.0.0.dev.1"
   spec.authors  = ["Joel Glovier"]
   spec.email    = ["jglovier@github.com"]
 
