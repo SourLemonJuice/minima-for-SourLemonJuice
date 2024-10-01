@@ -4,4 +4,4 @@ layout: version
 permalink: /version/
 ---
 
-Content
+Some content
