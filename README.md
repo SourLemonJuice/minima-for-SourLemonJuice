@@ -1,3 +1,14 @@
+## About Fork
+
+This fork is only used for my blog, it may add some custom post variables and layouts.\
+I don't want to change(override) the original `minima` theme in the blog git tree
+
+This repository will not make a gem package, only use it with `jekyll-remote-theme`
+
+More documents(zho-Hans) in [README-lemon.md](./README-lemon.md)
+
+---
+
 <div align="center">
   <p><em><strong>Disclaimer:</strong> The information here may vary depending on the version you're using.<br/>
   Please refer to the <code>README.md</code> bundled within the theme-gem for information specific to your version or by pointing
@@ -8,15 +19,6 @@
   <p><a href="https://jekyll.github.io/minima/">Theme preview</a></p>
   <p><img src="/screenshot.png"/></p>
 </div>
-
-## About Fork
-
-This fork is only used for my blog, it may add some custom post variables and layouts.\
-I don't want to change(override) the original `minima` theme in the blog git tree
-
-This repository will not make a gem package, only use it with `jekyll-remote-theme`
-
-More documents(zho-Hans) in [README-lemon.md](./README-lemon.md)
 
 ## Installation
 
