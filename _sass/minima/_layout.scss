@@ -88,6 +88,7 @@
     line-height: $base-line-height;
     display: block;
     padding: 5px 10px;
+    margin-left: 20px;
 
     // Gaps between nav items, but not on the last one
     margin-left: 20px;
@@ -117,6 +118,7 @@
     .page-link {
       display: inline;
       padding: 0;
+      margin-left: auto;
 
       margin-left: auto;
       &:not(:last-child) {

@@ -41,6 +41,7 @@
   * Add Codeberg icon and update list of supported social links (#788)
   * Added whatsapp social icon. (#781)
   * Update GitLab icon (#765)
+  * Add Bluesky to social media platforms (#799)
 
 ### Major Enhancements
 
@@ -73,6 +74,8 @@
   * Fix deprecation warnings from Dart Sass (#700)
   * Fix reference to base layout in `404.html` (#713)
   * Minimal fixes for Disqus (#775)
+  * Fix deprecation warnings (#796) (#797)
+  * Avoid clipping responsive social SVG icons (#808)
 
 ### Development Fixes
 
@@ -86,6 +89,18 @@
   * Build and deploy demo site via GH Action workflow (#636)
   * Improve readability of config file (#703)
   * Trigger demo-site build manually (#714)
+  * Update History document for v2.5.2 (#803)
+
+## 2.5.2
+
+### Bug Fixes
+
+  * Fix deprecation warnings from Dart Sass (#801)
+
+### Development Fixes
+
+  * Set up CI for `2.5-stable` branch (#800)
+  * Release gem from 2.5-stable via GitHub Actions (#802)
 
 ## 2.5.1
 
