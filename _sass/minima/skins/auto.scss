@@ -21,8 +21,8 @@ $lm-text-color:            #111111 !default;
 $lm-background-color:      #ffffff !default;
 $lm-code-background-color: #ebebeb !default;
 
-$lm-link-base-color:       #ff523b !default;
-$lm-link-visited-color:    color.adjust($lm-link-base-color, $lightness: -15%, $space: hsl) !default;
+$lm-link-base-color:       #9b393a !default;
+$lm-link-visited-color:    $lm-link-base-color !default;
 $lm-link-hover-color:      $lm-text-color !default;
 
 $lm-border-color-01:       $lm-brand-color-light !default;
