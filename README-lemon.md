@@ -23,6 +23,33 @@ emm 我现在在用 remote-theme 而且估计也不是很想发布 gem 包，先
 
 包括 home 布局中的帖子列表上和 post 布局中的元信息里
 
+## 页面 meta 标签设定
+
+在以前的版本中，noindex 标签的设定是通过名为 `noindex: true` 的变量配置的。\
+这将在页面的 head 中添加这样的内容：
+
+```html
+<meta name="robots" content="noindex">
+```
+
+但这不可扩展，不能设为 `none` 也不能设为 `noindex, nofollow`。\
+现在，在保留原有变量的兼容性的情况下，新的 `meta_tags` 变量将允许配置任意 meta 标签为任意内容，比如：
+
+```yaml
+meta_tags:
+  - name: "robots"
+    content: "noindex, nofollow"
+  - name: "just-test"
+    content: "foo"
+```
+
+这将生成：
+
+```html
+<meta name="robots" content="noindex, nofollow">
+<meta name="just-test" content="foo">
+```
+
 ## 新增变量
 
 ### page.has_modified
