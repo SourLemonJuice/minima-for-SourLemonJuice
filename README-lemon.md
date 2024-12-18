@@ -18,8 +18,12 @@ emm 我现在在用 remote-theme 而且估计也不是很想发布 gem 包，先
 
 ## 修改时间的显示
 
-该分叉放弃了 `page.mdate` 作为修改时间的显示方式，而是希望使用 `gjtorikian/jekyll-last-modified-at` 作为修改时间的获取方式。\
+该分叉~~放弃了~~ `page.mdate` 作为修改时间的显示方式，而是希望使用 `gjtorikian/jekyll-last-modified-at` 作为修改时间的获取方式。\
 但由于 liquid 糟糕的语法，这不是自动的，每个被修改的帖子都需要配置 `page.has_modified` 为 `true` 才会在各个地方显示最后修改时间
+
+> 更新：\
+> 新的配置格式将尊重 `page.mdade` 的意愿以获取时间，但 `page.has_modify` 的优先级仍然更高。\
+> 如果配置了 `mdate: file` 则行为与 `page.has_modify: true` 一致
 
 包括 home 布局中的帖子列表上和 post 布局中的元信息里
 
