@@ -5,6 +5,9 @@
   {%- if page.noindex -%}
   <meta name="robots" content="noindex">
   {%- endif -%}
+  {%- if page.robots -%}
+  <meta name="robots" content="{{ page.robots }}">
+  {%- endif -%}
   {%- for tag in page.meta_tags -%}
   <meta name="{{ tag.name }}" content="{{ tag.content }}">
   {%- endfor -%}

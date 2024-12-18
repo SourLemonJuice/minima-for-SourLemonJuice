@@ -14,7 +14,7 @@ layout: base
         {{ page.date | date: date_format_no_hour }}
       </time>
 
-      {%- if page.has_modified != nil or page.mdate != nil -%}
+      {%- if page.has_modified or page.mdate -%}
         {%- if page.has_modified == true or page.mdate == "file" -%}
           {%- assign mdate = page.last_modified_at | date_to_xmlschema -%}
         {%- else -%}
@@ -44,9 +44,9 @@ layout: base
         {% endfor %}
       {%- endif -%}
 
-      {%- if page.noindex -%}
+      {%- if page.noindex or page.robots -%}
         <br><br>
-        > noindex enabled on this page
+        Note: robot blocking tags enabled on this page
       {%- endif -%}
     </p>
   </header>

@@ -30,7 +30,7 @@ emm 我现在在用 remote-theme 而且估计也不是很想发布 gem 包，先
 ## 页面 meta 标签设定
 
 在以前的版本中，noindex 标签的设定是通过名为 `noindex: true` 的变量配置的。\
-这将在页面的 head 中添加这样的内容：
+这将在页面的 head 中添加这样的内容，并且在 `post` 布局的元信息部分添加一行 `Note: robot blocking tags enabled` 的提示：
 
 ```html
 <meta name="robots" content="noindex">
@@ -52,6 +52,14 @@ meta_tags:
 ```html
 <meta name="robots" content="noindex, nofollow">
 <meta name="just-test" content="foo">
+```
+
+不过这种写法不会触发 `post` 布局中特殊的提示标语
+
+`robots: <content>` 配置将触发提示标语，并且可以固定的将 robots 标签写入自定义的 content。比如：
+
+```yaml
+robots: none
 ```
 
 ## 新增变量
