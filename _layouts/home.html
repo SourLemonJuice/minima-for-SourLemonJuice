@@ -28,7 +28,7 @@ layout: base
         <span class="post-meta">
           {{ post.date | date: date_format_no_hour }}
           {% if post.has_modified or post.mdate -%}
-            | has modified
+            | modified
           {%- endif -%}
         </span>
         <h3>
