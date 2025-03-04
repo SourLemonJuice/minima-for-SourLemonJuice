@@ -121,7 +121,8 @@ a {
 
   &:hover {
     color: $link-hover-color;
-    text-decoration: underline;
+    text-decoration: underline $brand-color;
+    text-underline-offset: 3px;
   }
 
   .social-media-list &:hover {
@@ -197,18 +198,10 @@ pre {
  * for content that needs to be read
  */
 .wrapper {
-  max-width: calc(#{$content-width} - (#{$spacing-unit}));
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: $spacing-unit * .5;
-  padding-left: $spacing-unit * .5;
+  max-width: $content-width;
+  margin: 0 auto;
+  padding: 0 $spacing-unit;
   @extend %clearfix;
-
-  @media screen and (min-width: $on-large) {
-    max-width: calc(#{$content-width} - (#{$spacing-unit} * 2));
-    padding-right: $spacing-unit;
-    padding-left: $spacing-unit;
-  }
 }
 
 
