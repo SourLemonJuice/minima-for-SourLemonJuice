@@ -94,5 +94,9 @@ minima:
 
 ### page.show_tags
 
+> 已弃用\
+> 在合并到 minima v3 的期间内，标签功能已被改进为自动识别的形式\
+> 解决方式放到了这里：<https://stackoverflow.com/a/79483199/25416550>
+
 开启标签展示。\
 不是我不想自动一点，但 `{%- if page.tags != '' -%}` 和 `{%- if page.tags -%}` 都用不了啊（烦）
