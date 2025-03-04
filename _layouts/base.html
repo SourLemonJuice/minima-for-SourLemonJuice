@@ -6,6 +6,9 @@
   <body>
 
     {%- include header.html -%}
+    {%- if site.minima.privacy_dialog -%}
+      {%- include privacy-dialog.html -%}
+    {%- endif -%}
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">

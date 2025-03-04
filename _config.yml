@@ -54,12 +54,15 @@ minima:
     - about.md
 
   # Set to `true` to show excerpts on the homepage.
-  #show_excerpts: false
+  # show_excerpts: false
 
   # Minima date format.
   # The default value is "%b %d, %Y" (e.g. Nov 14, 2023)
   # Refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this.
   #date_format: "%b-%d-%Y"
+
+  # Display something on a dialog when the user first visit this site.
+  # privacy_dialog: false
 
   # Social Media Links
   # Renders icons via Font Awesome Free webfonts CDN, based on ordered list of entries.

@@ -1,0 +1,13 @@
+<script
+  async
+  src="{{ '/assets/js/privacy-dialog.js' | relative_url }}"
+></script>
+<dialog class="privacy-dialog-wrapper" id="privacyPolicyDialog">
+  <div class="privacy-dialog-text">
+    {%- include custom-privacy-dialog.html -%}
+  </div>
+  <form method="dialog" class="privacy-dialog-button-wrapper">
+    <button value="accept">Accept all</button>
+    <button value="accept">Agree</button>
+  </form>
+</dialog>
