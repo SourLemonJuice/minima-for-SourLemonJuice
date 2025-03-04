@@ -45,5 +45,5 @@ dialog:not([open]) {
 .privacy-dialog-button-wrapper button:hover {
   background-color: #cc7266;
   color: #301b18;
-  border: 3px solid #ad4748;
+  border: 2px solid #ad4748;
 }
