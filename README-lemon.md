@@ -18,7 +18,7 @@ emm 我现在在用 remote-theme 而且估计也不是很想发布 gem 包，先
 
 ## 修改时间的显示
 
-该分叉~~放弃了~~ `page.mdate` 作为修改时间的显示方式，而是希望使用 `gjtorikian/jekyll-last-modified-at` 作为修改时间的获取方式。\
+该分叉~~放弃了~~ `page.mdate` 作为修改时间的显示方式，而是希望使用 [gjtorikian/jekyll-last-modified-at](https://github.com/gjtorikian/jekyll-last-modified-at) 作为修改时间的获取方式。\
 但由于 liquid 糟糕的语法，这不是自动的，每个被修改的帖子都需要配置 `page.has_modified` 为 `true` 才会在各个地方显示最后修改时间
 
 > 更新：\
@@ -64,11 +64,18 @@ robots: none
 
 ## 新增变量
 
+### site.minima.privacy_dialog
+
+bool
+
+用于控制是否在用户第一次访问网站是弹出隐私对话框。\
+提示框中的内容可以在 `_includes/custom-privacy-dialog.html` 中定制
+
 ### page.has_modified
 
 bool
 
-用于判断是否显示最后修改日期，如果为 true 则使用 [gjtorikian/jekyll-last-modified-at](https://github.com/gjtorikian/jekyll-last-modified-at) 获取时间
+见上文 [#修改时间的显示](#修改时间的显示)
 
 ### site.minima.date_format_no_hour
 
@@ -100,3 +107,17 @@ minima:
 
 开启标签展示。\
 不是我不想自动一点，但 `{%- if page.tags != '' -%}` 和 `{%- if page.tags -%}` 都用不了啊（烦）
+
+## 自定义覆盖文件
+
+### custom-head.html
+
+用于在 `<head>` 标签中添加更多自定义信息，比如 analytics 脚本或者特定的 metadata
+
+### custom-footer.html
+
+在 social_link 之上，个人介绍之下显示一些信息。我会用来写一些 "powered by" 和版权信息
+
+### custom-privacy-dialog.html
+
+见上文 [#site.minima.privacy_dialog](#siteminimaprivacy_dialog)
