@@ -1,6 +1,6 @@
 function showPrivacyPolicyPopup() {
   // check local storage
-  const popupState = localStorage.getItem("allowPrivacyPolicy");
+  const popupState = localStorage.getItem("acceptPrivacyPolicy");
   switch (popupState) {
     case null:
       break;
@@ -8,7 +8,7 @@ function showPrivacyPolicyPopup() {
       return;
     default:
       console.warn(
-        `value unexpected value of local storage allowPrivacyPolicy: ${popupState}`
+        `value unexpected value of local storage acceptPrivacyPolicy: ${popupState}`
       );
       break;
   }
@@ -20,7 +20,7 @@ function showPrivacyPolicyPopup() {
   dialog.addEventListener("close", () => {
     switch (dialog.returnValue) {
       case "accept":
-        localStorage.setItem("allowPrivacyPolicy", "accept");
+        localStorage.setItem("acceptPrivacyPolicy", "accept");
         break;
       default:
         console.error(

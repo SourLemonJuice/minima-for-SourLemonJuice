@@ -62,7 +62,7 @@ minima:
   #date_format: "%b-%d-%Y"
 
   # Display something on a dialog when the user first visit this site.
-  # privacy_dialog: false
+  privacy_dialog: true
 
   # Social Media Links
   # Renders icons via Font Awesome Free webfonts CDN, based on ordered list of entries.
