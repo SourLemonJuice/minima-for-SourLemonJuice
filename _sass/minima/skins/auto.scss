@@ -11,15 +11,15 @@ $color-scheme-dark: false !default;
 // Light mode
 // ----------
 
-$lm-brand-color:           #828282 !default;
+$lm-brand-color:           #242020 !default;
 $lm-brand-color-light:     color.adjust($lm-brand-color, $lightness: 40%, $space: hsl) !default;
 $lm-brand-color-dark:      color.adjust($lm-brand-color, $lightness: -25%, $space: hsl) !default;
 
 $lm-site-title-color:      $lm-brand-color-dark !default;
 
-$lm-text-color:            #111111 !default;
-$lm-background-color:      #ffffff !default;
-$lm-code-background-color: #ebebeb !default;
+$lm-background-color:      #fffbf6 !default;
+$lm-code-background-color: #ffffff !default;
+$lm-text-color:            color.adjust($lm-background-color, $lightness: -88%, $space: hsl) !default;
 
 $lm-link-base-color:       #9b393a !default;
 $lm-link-visited-color:    $lm-link-base-color !default;
@@ -107,14 +107,14 @@ $lm-table-border-color:    $lm-border-color-01 !default;
 // Dark mode
 // ---------
 
-$dm-brand-color:           #998d8b !default;
+$dm-brand-color:           #e8e4e3 !default;
 $dm-brand-color-light:     color.adjust($dm-brand-color, $lightness: 5%, $space: hsl) !default;
 $dm-brand-color-dark:      color.adjust($dm-brand-color, $lightness: -35%, $space: hsl) !default;
 
 $dm-site-title-color:      $dm-brand-color-light !default;
 
-$dm-background-color:      #0e0e0e !default;
-$dm-code-background-color: #1e1e1e !default;
+$dm-background-color:      #0f0f0f !default;
+$dm-code-background-color: #0c1016 !default;
 $dm-text-color:            color.adjust($dm-background-color, $lightness: 88%, $space: hsl) !default;
 
 $dm-link-base-color:       #fe8e7f !default;
