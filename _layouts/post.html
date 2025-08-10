@@ -44,12 +44,13 @@ layout: base
             {%- unless forloop.last %}, {% endunless -%}
         {% endfor %}
       {%- endif -%}
-
-      {%- if page.noindex or page.robots -%}
-        <br><br>
-        Note: robot blocking tags enabled on this page
-      {%- endif -%}
     </div>
+
+    {%- if page.noindex or page.robots -%}
+      <div class="slj-robot-blocking-note">
+        Note: robot blocking tags enabled on this page
+      </div>
+    {%- endif -%}
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
