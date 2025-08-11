@@ -19,6 +19,7 @@
   bottom: 2%;
   left: 2%;
 
+  font-family: $serif-font-family;
   color: #ff0000;
   padding: 8px;
   background-color: $code-background-color;
@@ -27,7 +28,6 @@
 
 .slj-dev-build-warning h3 {
   margin: 0;
-  font-family: $serif-font-family;
 }
 
 .slj-dev-build-warning p {
