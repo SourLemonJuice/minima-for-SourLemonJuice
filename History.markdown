@@ -12,6 +12,9 @@
   * Improve documentation for config options (#760)
   * Add platform X supporting in README (#780)
   * Update readme_banner.svg to support dark mode (#813)
+  * Add a warning regarding HEAD commit of `master` (#861)
+  * Update google analytics README regarding G- and UA- tags (#689)
+  * Fix typo in README (#895)
 
 ### Minor Enhancements
 
@@ -44,6 +47,13 @@
   * Update GitLab icon (#765)
   * Add Bluesky to social media platforms (#799)
   * Simplify inserting markup before closing body tag (#854)
+  * Render headings and text in different colors (#866)
+  * Refresh styling of highlighted code snippet blocks (#875)
+  * Adapt styles for GFM task-lists (#882)
+  * Render link to feed as last item of social-links list (#888)
+  * Adjust colors based on WCAG contrast criterion (#891)
+  * Add styles to be in sync with Jekyll&#39;s `mark_lines` feature (#892)
+  * Improve rendering of pagination pagers (#893)
 
 ### Major Enhancements
 
@@ -57,6 +67,8 @@
   * Move `show_excerpts` setting to be under `minima` namespace (#841)
   * Simplify `.wrapper` style definition (#852)
   * Improve navigation styling and experience (#856)
+  * Set default `font-weight` of headings to `500` (#868)
+  * Render comments via platform-agnostic inclusion (#886)
 
 ### Bug Fixes
 
@@ -87,6 +99,20 @@
   * Use single-quotes when nested within double-quoted attributes (#840)
   * Improve rendering of post header (#855)
   * Improve link underline styling (#857)
+  * Replace `page.date` with `pdate` consistently in `post` layout (#859)
+  * Reduce wrapper padding on small screens (#865)
+  * Adjust the font size of blockquotes (#492)
+  * Adjust table-text color based on heading-color (#869)
+  * Adjust table border contrast (#872)
+  * Toggle icons based on `#nav-trigger` state (#878)
+  * Re-establish compatibility with legacy Sass engine (#880)
+  * Delay loading font-awesome stylesheet from CDN (#883)
+  * Undo fixed header (#884)
+  * Render minimal site-nav on small screens (#885)
+  * Fix invalid HTML (#330)
+  * Restore the functionality of Disqus (#902)
+  * Pins font awesome font to version 7 and use it in the stylesheets (#908)
+  * Align nav-items on small screen devices (#912)
 
 ### Development Fixes
 
@@ -101,6 +127,7 @@
   * Improve readability of config file (#703)
   * Trigger demo-site build manually (#714)
   * Update History document for v2.5.2 (#803)
+  * Move development config to a separate config file (#879)
 
 ## 2.5.2
 

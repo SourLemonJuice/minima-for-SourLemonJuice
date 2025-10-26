@@ -9,6 +9,30 @@ More documents(zho-Hans) in [README-lemon.md](./README-lemon.md)
 
 ---
 
+> [!WARNING]
+> **The `master` branch is under active development towards a semver-major release with non-backwards-compatible changes.**
+>
+> While you may use this theme in the current state either via the `jekyll-remote-theme` plugin or via a Gemfile, it is
+> recommended to point to a particular git ref that does not break your site's existing render and gradually update to a
+> newer git ref via a pull request after consulting this repository's commit-log and README.
+>
+> **Pointing directly to the `HEAD` commit of the `master` branch is risky and may contain changes that break your site.**
+>
+> Example of pointing to a particular git ref via `jekyll-remote-theme` plugin:
+> ```yaml
+> # _config.yml
+>
+> remote_theme: "jekyll/minima@1e8a445"
+> ```
+> Example of pointing to a particular git ref via `Gemfile` (with `theme: minima` in `_config.yml`)
+> ```ruby
+> # Gemfile
+>
+> gem "minima", github: "jekyll/minima", ref: "1e8a445"
+> ```
+
+<br/><br/>
+
 <div align="center">
   <p><em><strong>Disclaimer:</strong> The information here may vary depending on the version you're using.<br/>
   Please refer to the <code>README.md</code> bundled within the theme-gem for information specific to your version or by pointing
@@ -91,7 +115,7 @@ The title for this section is `Posts` by default and rendered with an `<h2>` tag
 
 Refers to snippets of code within the `_includes` directory that can be inserted in multiple layouts (and another include-file as well) within the same theme-gem.
 
-  - `disqus_comments.html` &mdash; Code to markup disqus comment box.
+  - `comments.html` &mdash; Markup to render comments (via Disqus; active only when Jekyll environment is set to `production`).
   - `footer.html` &mdash; Defines the site's footer section.
   - `google-analytics.html` &mdash; Inserts Google Analytics module (active only in production environment).
   - `head.html` &mdash; Code-block that defines the `<head></head>` in *default* layout.
@@ -259,22 +283,20 @@ You can *add* custom metadata to the `<head />` of your layouts by creating a fi
 
 ### Enabling comments (via Disqus)
 
-Optionally, if you have a Disqus account, you can tell Jekyll to use it to show a comments section below each post.
-
-:warning: `url`, e.g. `https://example.com`, must be set in you config file for Disqus to work.
-
-To enable it, after setting the url field, you also need to add the following lines to your Jekyll site:
+Optionally, if you have a Disqus account, you can render a comments section below each post with the following configuration:
 
 ```yaml
-  disqus:
-    shortname: my_disqus_shortname
+url: "https://my_domain.com"
+disqus:
+  shortname: my_disqus_shortname
 ```
 
 You can find out more about Disqus' shortnames [here](https://help.disqus.com/installation/whats-a-shortname).
 
 Comments are enabled by default and will only appear in production, i.e., `JEKYLL_ENV=production`
 
-If you don't want to display comments for a particular post you can disable them by adding `comments: false` to that post's YAML Front Matter.
+If you don't want to display comments for a particular post you can disable them by adding `comments: false` to that
+post's YAML Front Matter.
 
 ### Author Metadata
 
@@ -318,20 +340,27 @@ where `title` corresponds to the link-title displayed when a visitor hovers mous
 Social platform icons are rendered using the latest version of Font Awesome Free webfonts sourced via remote CDN.
 The full list of available social icons can be found at https://fontawesome.com/search?ic=brands
 
+> [!NOTE]
+> The link to your site's main syndication feed is always rendered as the last item of the social-links list.<br />
+> You may opt to not have this link rendered at all by setting config **`minima.hide_site_feed_link`** to `true`:
+> ```yaml
+> minima:
+>   hide_site_feed_link: true  # `false` or `null` by default
+> ```
 
 ### Enabling Google Analytics
 
 To enable Google Analytics, add the following lines to your Jekyll site:
 
 ```yaml
-  google_analytics: UA-NNNNNNNN-N
+google_analytics: G-NNNNNNNNNN  // The former `UA-NNNNNNNN-N` format is no longer supported by Google
 ```
 
-Google Analytics will only appear in production, i.e., `JEKYLL_ENV=production`
+Google Analytics will only appear in production, i.e., `JEKYLL_ENV=production`.
 
 ### Enabling Excerpts on the Home Page
 
-To display post-excerpts on the Home Page, simply set `show_excepts` under top-level key `minima` to `true` in your
+To display post-excerpts on the Home Page, simply set `show_excerpts` under top-level key `minima` to `true` in your
 `_config.yml`:
 
 ```yaml

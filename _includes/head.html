@@ -3,17 +3,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {%- if page.noindex -%}
-  <meta name="robots" content="noindex">
+    <meta name="robots" content="noindex">
   {%- endif -%}
   {%- if page.robots -%}
-  <meta name="robots" content="{{ page.robots }}">
+    <meta name="robots" content="{{ page.robots }}">
   {%- endif -%}
   {%- for tag in page.meta_tags -%}
-  <meta name="{{ tag.name }}" content="{{ tag.content }}">
+    <meta name="{{ tag.name }}" content="{{ tag.content }}">
   {%- endfor -%}
   {%- seo -%}
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css">
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link id="main-stylesheet" rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/privacy-dialog.css' | relative_url }}">
   {%- feed_meta -%}
 
