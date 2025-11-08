@@ -3,9 +3,14 @@
 This fork is only used for my blog, it may add some custom post variables and layouts.\
 I don't want to change(override) the original `minima` theme in the blog git tree
 
-This repository will not make a gem package, only use it with `jekyll-remote-theme`
+This repository will not make a gem package, only use it with `jekyll-remote-theme`:
 
-More documents(zho-Hans) in [README-lemon.md](./README-lemon.md)
+```yaml
+# use @stable branch
+remote_theme: https://github.com/SourLemonJuice/minima-for-SourLemonJuice@stable
+```
+
+More documents in [README-lemon.md](./README-lemon.md)
 
 ---
 
