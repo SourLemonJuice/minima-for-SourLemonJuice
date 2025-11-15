@@ -11,3 +11,5 @@ gem "erb", "~> 4.0"
 gem "jekyll-last-modified-at", "~> 1.3"
 
 gem "csv", "~> 3.3"
+
+gem "logger", "~> 1.7"
