@@ -31,10 +31,10 @@ $lm-border-color-01:       $lm-brand-color-light !default;
 $lm-border-color-02:       color.adjust($lm-brand-color, $lightness: 35%, $space: hsl) !default;
 $lm-border-color-03:       $lm-brand-color-dark !default;
 
-$lm-table-text-color:      color.adjust($lm-heading-color, $lightness: 18%, $space: hsl) !default;
-$lm-table-zebra-color:     color.adjust($lm-brand-color, $lightness: 46%, $space: hsl) !default;
-$lm-table-header-bg-color: color.adjust($lm-brand-color, $lightness: 43%, $space: hsl) !default;
-$lm-table-header-border:   color.adjust($lm-brand-color, $lightness: 37%, $space: hsl) !default;
+$lm-table-text-color:      $lm-text-color !default;
+$lm-table-zebra-color:     color.adjust($lm-background-color, $lightness: -1%, $space: hsl) !default;
+$lm-table-header-bg-color: $lm-table-zebra-color !default;
+$lm-table-header-border:   $lm-border-color-01 !default;
 $lm-table-border-color:    $lm-border-color-01 !default;
 
 
@@ -142,8 +142,8 @@ $dm-border-color-03:       $dm-brand-color !default;
 
 $dm-table-text-color:      $dm-text-color !default;
 $dm-table-zebra-color:     color.adjust($dm-background-color, $lightness: 4%, $space: hsl) !default;
-$dm-table-header-bg-color: color.adjust($dm-background-color, $lightness: 10%, $space: hsl) !default;
-$dm-table-header-border:   color.adjust($dm-background-color, $lightness: 15%, $space: hsl) !default;
+$dm-table-header-bg-color: $dm-table-zebra-color !default;
+$dm-table-header-border:   $dm-border-color-01 !default;
 $dm-table-border-color:    $dm-border-color-01 !default;
 
 
