@@ -11,28 +11,28 @@ $color-scheme-dark: false !default;
 // Light mode
 // ----------
 
-$lm-brand-color:           #242020 !default;
-$lm-brand-color-light:     color.adjust($lm-brand-color, $lightness: 40%, $space: hsl) !default;
-$lm-brand-color-dimmed:    color.adjust($lm-brand-color, $lightness: -11%, $space: hsl) !default;
-$lm-brand-color-dark:      color.adjust($lm-brand-color, $lightness: -25%, $space: hsl) !default;
+$lm-brand-color:           hsl(336 9.8% 50%) !default;
+$lm-brand-color-light:     color.adjust($lm-brand-color, $lightness: 0.3, $space: oklch) !default;
+$lm-brand-color-dimmed:    color.adjust($lm-brand-color, $lightness: -0.2, $space: oklch) !default;
+$lm-brand-color-dark:      color.adjust($lm-brand-color, $lightness: -0.25, $space: oklch) !default;
 
 $lm-site-title-color:      $lm-brand-color-dark !default;
 
-$lm-background-color:      #fffbf6 !default;
-$lm-code-background-color: #ffffff !default;
-$lm-text-color:            color.adjust($lm-background-color, $lightness: -88%, $space: hsl) !default;
+$lm-background-color:      hsl(10 50% 97.6%) !default;
+$lm-code-background-color: hsl(0 0% 99.6%) !default;
+$lm-text-color:            color.adjust($lm-background-color, $lightness: -88%, $space: oklch) !default;
 $lm-heading-color:         $lm-text-color !default;
 
-$lm-link-base-color:       #9b393a !default;
+$lm-link-base-color:       hsl(2 47.1% 40.8%) !default;
 $lm-link-visited-color:    $lm-link-base-color !default;
-$lm-link-hover-color:      $lm-text-color !default;
+$lm-link-hover-color:      color.adjust($lm-link-base-color, $lightness: -0.2, $space: oklch) !default;
 
-$lm-border-color-01:       $lm-brand-color-light !default;
-$lm-border-color-02:       color.adjust($lm-brand-color, $lightness: 35%, $space: hsl) !default;
+$lm-border-color-01:       $lm-brand-color !default;
+$lm-border-color-02:       $lm-brand-color-light !default;
 $lm-border-color-03:       $lm-brand-color-dark !default;
 
 $lm-table-text-color:      $lm-text-color !default;
-$lm-table-zebra-color:     color.adjust($lm-background-color, $lightness: -1%, $space: hsl) !default;
+$lm-table-zebra-color:     color.adjust($lm-background-color, $lightness: -0.015, $space: oklch) !default;
 $lm-table-header-bg-color: $lm-table-zebra-color !default;
 $lm-table-header-border:   $lm-border-color-01 !default;
 $lm-table-border-color:    $lm-border-color-01 !default;
