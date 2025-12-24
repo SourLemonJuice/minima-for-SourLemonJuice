@@ -6,4 +6,10 @@
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 #
 layout: home
+title: "Awesome Site Are Available At Here~"
+list_title: "Awesome List"
+---
+
+Awesome site.
+
 ---
