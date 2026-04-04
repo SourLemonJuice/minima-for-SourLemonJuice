@@ -64,13 +64,6 @@ robots: none
 
 ## 新增变量
 
-### site.minima.privacy_dialog
-
-bool
-
-用于控制是否在用户第一次访问网站是弹出隐私对话框。\
-提示框中的内容可以在 `_includes/custom-privacy-dialog.html` 中定制
-
 ### page.has_modified
 
 bool
