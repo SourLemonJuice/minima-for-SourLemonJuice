@@ -92,6 +92,17 @@ minima:
 
 我有在想要不要加个配置在超链接前显示些文本，但还是算了吧，对于这种情况还是有点复杂了
 
+### site.minima.rainbow_header
+
+bool
+
+设为 `true` 时将 `.site-header` 的 `border-top` 替换为彩虹旗（🏳️‍🌈）渐变：
+
+```yml
+minima:
+  rainbow_header: true
+```
+
 ### page.show_tags
 
 > 已弃用\

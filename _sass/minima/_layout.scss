@@ -11,6 +11,28 @@
   border-bottom: 1px solid $border-color-01;
 }
 
+// Rainbow header border (🏳️‍🌈)
+// Controlled by site.minima.rainbow_header in _config.yml
+.site-header.rainbow-header {
+  border-top: none;
+  background: repeating-linear-gradient(to right,
+    #e40303 0px,     #e40303 40px,
+    #ff8c00 40px,    #ff8c00 80px,
+    #ffed00 80px,    #ffed00 120px,
+    #008026 120px,   #008026 160px,
+    #004dff 160px,   #004dff 200px,
+    #750787 200px,   #750787 240px,
+    #ffffff 240px,   #ffffff 280px,
+    #ffafc8 280px,   #ffafc8 320px,
+    #74d7ee 320px,   #74d7ee 360px,
+    #613915 360px,   #613915 400px,
+    #000000 400px,   #000000 440px
+  );
+  background-size: 100% 5px;
+  background-repeat: no-repeat;
+  padding-top: 5px; // Compensate for the space taken by the rainbow
+}
+
 /*
   Added by SourLemonJuice
 */

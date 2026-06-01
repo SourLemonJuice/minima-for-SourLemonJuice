@@ -64,3 +64,5 @@ minima:
   contacts:
     - url: "https://example.com/"
       text: "example.com"
+
+  rainbow_header: true
