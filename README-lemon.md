@@ -121,7 +121,3 @@ minima:
 ### custom-footer.html
 
 在 social_link 之上，个人介绍之下显示一些信息。我会用来写一些 "powered by" 和版权信息
-
-### custom-privacy-dialog.html
-
-见上文 [#site.minima.privacy_dialog](#siteminimaprivacy_dialog)
