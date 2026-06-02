@@ -7,7 +7,7 @@
   min-height: $spacing-unit * 1.865;
   line-height: $base-line-height * $base-font-size * 2.25;
   background-color: $background-color;
-  border-top: 5px solid $border-color-03;
+  border-top: 4px solid $border-color-03;
   border-bottom: 1px solid $border-color-01;
 }
 
@@ -28,9 +28,9 @@
     #613915 360px,   #613915 400px,
     #000000 400px,   #000000 440px
   );
-  background-size: 100% 5px;
+  background-size: 100% 4px;
   background-repeat: no-repeat;
-  padding-top: 5px; // Compensate for the space taken by the rainbow
+  padding-top: 4px; // Compensate for the space taken by the rainbow
 }
 
 /*
