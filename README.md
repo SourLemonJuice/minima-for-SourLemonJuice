@@ -10,7 +10,9 @@ This repository will not make a gem package, only use it with `jekyll-remote-the
 remote_theme: https://github.com/SourLemonJuice/minima-for-SourLemonJuice@stable
 ```
 
-More documents in [README-lemon.md](./README-lemon.md)
+More documents in [README_FORK.md](./README_FORK.md)
+
+AI & Harness Engineering：这里其实也是一个我用来尝试整合 AI 工具和 Harness 技巧的地方就是了。
 
 ---
 
