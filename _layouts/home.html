@@ -26,8 +26,13 @@ layout: base
       <li>
         <span class="post-meta">
           {{ post.date | date: date_format_no_hour }}
-          {% if post.has_modified or post.mdate -%}
-            | modified
+          {%- if post.has_modified or post.mdate -%}
+            {%- if post.has_modified == true or post.mdate == "file" -%}
+              {%- assign post_mdate = post.last_modified_at | date_to_xmlschema -%}
+            {%- else -%}
+              {%- assign post_mdate = post.mdate | date_to_xmlschema -%}
+            {%- endif %}
+            (Updated: {{ post_mdate | date: date_format_no_hour }})
           {%- endif -%}
         </span>
         <h3>
