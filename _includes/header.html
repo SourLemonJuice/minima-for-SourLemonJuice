@@ -1,4 +1,5 @@
-<header class="site-header{% if site.minima.rainbow_header %} rainbow-header{% endif %}">
+<div class="header-bar{% if site.minima.rainbow_header %} rainbow{% endif %}" aria-hidden="true"></div>
+<header class="site-header">
 
   <div class="wrapper-sidebar">
     {%- assign default_paths = site.pages | map: "path" -%}

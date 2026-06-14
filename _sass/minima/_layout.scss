@@ -7,14 +7,18 @@
   min-height: $spacing-unit * 1.865;
   line-height: $base-line-height * $base-font-size * 2.25;
   background-color: $background-color;
-  border-top: 4px solid $border-color-03;
   border-bottom: 1px solid $border-color-01;
 }
 
-// Rainbow header border (🏳️‍🌈)
-// Controlled by site.minima.rainbow_header in _config.yml
-.site-header.rainbow-header {
-  border-top: none;
+// Decorative strip above the header. Gray by default.
+// The .rainbow variant is controlled by site.minima.rainbow_header in _config.yml
+.header-bar {
+  width: 100%;
+  height: 4px;
+  background-color: $border-color-03;
+}
+
+.header-bar.rainbow {
   background: repeating-linear-gradient(to right,
     #e40303 0px,     #e40303 40px,
     #ff8c00 40px,    #ff8c00 80px,
@@ -30,7 +34,6 @@
   );
   background-size: 100% 4px;
   background-repeat: no-repeat;
-  padding-top: 4px; // Compensate for the space taken by the rainbow
 }
 
 /*

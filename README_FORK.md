@@ -96,12 +96,15 @@ minima:
 
 bool
 
-设为 `true` 时将 `.site-header` 的 `border-top` 替换为彩虹旗（🏳️‍🌈）渐变：
+头部装饰条现在是一个独立的 `.header-bar` 元素，渲染在 `.site-header` 之上（`.site-header` 自身已不再有 `border-top`）。\
+`.header-bar` 默认显示一条灰色的条带。当 `site.minima.rainbow_header` 设为 `true` 时，会给该元素附加 `rainbow` 类（即 `.header-bar.rainbow`），将灰色条带替换为彩虹旗（🏳️‍🌈）渐变：
 
 ```yml
 minima:
   rainbow_header: true
 ```
+
+> Collaborate with Claude Code
 
 ### page.show_tags
 
