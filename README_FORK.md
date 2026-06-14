@@ -24,6 +24,37 @@ emm 我现在在用 remote-theme 而且估计也不是很想发布 gem 包，先
 
 > Collaborate with Claude Code
 
+### 侧边目录（sticky table of contents）
+
+`post` 布局现在会在正文左侧的空白处显示一个吸附（`position: sticky`）的目录，随页面滚动停留在视口内，并在文章末尾随文章一起停下（不会盖住页脚）。
+
+实现要点：
+
+- 目录由 `_includes/post-toc.html` 提供：一段标记加一段内联脚本。脚本在页面加载后扫描 `.post-content` 内的 `h2`、`h3`、`h4` 标题，按文档顺序生成链接列表。
+- 标题的锚点 id 依赖 kramdown 默认的 `auto_ids`；脚本对极少数没有 id 的标题做了 slug 兜底（兼容中文）。
+- **少于 2 个标题时不显示目录**（短文不值得目录）。标记默认带 `hidden`，由脚本在确认有足够标题后才显示。
+- 滚动高亮（scroll-spy）：用 `IntersectionObserver` 给当前阅读到的标题对应的链接加上 `.is-active`。
+- 锚点跳转通过 CSS `scroll-behavior: smooth` 平滑滚动，并给正文标题加了 `scroll-margin-top` 以避开固定头部（同样耦合那个 `61px`）。
+
+布局上的约定（见 `_sass/minima/_layout.scss` 中 “Sticky table of contents” 一节）：
+
+- 宽屏下，`post` 的 `.wrapper` 变为对称的三列网格（`1fr | $content-width | 1fr`）：正文留在居中的中间列，目录作为真正在文档流中的网格项放进左列——这正是 `position: sticky` 能生效的前提（吸附范围被正文高度限制，所以不会盖住页脚）。
+- 目录宽 `$toc-width`（250px），与正文之间留 `$toc-gap`（24px）。
+- 网格由 `.wrapper:has(> .post-toc:not([hidden]))` 限定，因此非帖子页面、以及脚本尚未构建好的目录都不受影响。
+- 断点 `$toc-breakpoint` 由 `$content-width` 推导而来：只有当两侧留白足够容纳目录时才启用网格，否则关闭网格、正文恢复居中全宽。因此窄屏（包括移动端）不会显示目录。
+- 目录的 `top` 同样耦合固定头部的 `61px`。
+
+样式（参考 Figma 草图重构）：
+
+- 顶部有 “In this page” 标题（衬线字体、20px、上下 18px 外边距、正文色 `$text-color`）；其下列标题项，条目用衬线字体 `$serif-font-family`（Roboto Slab）、`$small-font-size`（14px）。
+- 所有条目用链接色 `$link-base-color`；条目文字左对齐、可换行（不再单行截断省略）。
+- 每条 `padding: 8px 0 8px 16px`；`h3`/`h4` 子标题在此基础上再加左缩进（30px / 44px）保留层级。
+- 每条都有 2px 左边框：未激活项为灰色 `$border-color-03`，当前阅读项（`.is-active`）换成链接色并加粗。
+
+每篇帖子可在 front matter 中用 `toc: false` 关闭目录（默认开启）。
+
+> Collaborate with Claude Code
+
 ## 颜色
 
 主要的改动位置是 auto 模式下的深色模式。\
@@ -84,6 +115,13 @@ robots: none
 bool
 
 见上文 [#修改时间的显示](#修改时间的显示)
+
+### page.toc
+
+bool
+
+默认开启。在 `post` 布局中将其设为 `false` 可关闭该帖子左侧的侧边目录。\
+见上文 [#侧边目录（sticky table of contents）](#侧边目录sticky-table-of-contents)
 
 ### site.minima.date_format_no_hour
 

@@ -2,6 +2,9 @@
 layout: base
 ---
 {%- include global-variables.html -%}
+{%- unless page.toc == false -%}
+  {%- include post-toc.html -%}
+{%- endunless -%}
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">

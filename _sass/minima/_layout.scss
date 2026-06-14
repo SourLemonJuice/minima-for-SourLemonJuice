@@ -11,6 +11,7 @@
   top: 4px;
   left: 0;
   right: 0;
+  z-index: 100;
   // Header height pinned to a fixed 56px. .page-content's top padding is
   // coupled to this value (4px .header-bar + 56px + 1px border) — keep them
   // in sync if you change it.
@@ -30,6 +31,7 @@
   right: 0;
   height: 4px;
   background-color: $border-color-03;
+  z-index: 100;
 }
 
 .header-bar.rainbow {
@@ -500,5 +502,114 @@
 @media screen and (min-width: $on-large) {
   .one-half {
     width: calc(50% - (#{$spacing-unit} / 2));
+  }
+}
+
+
+
+/**
+ * Sticky table of contents (Added by SourLemonJuice, collaborated with Claude Code)
+ *
+ * Lives in `.post-toc` (see `_includes/post-toc.html`). On wide viewports the
+ * post `.wrapper` becomes a symmetric 3-column grid: the article stays centered
+ * in the middle column at its usual `$content-width`, and the TOC sits in the
+ * left gutter as a real in-flow grid item — which is what lets it use
+ * `position: sticky` (bounded by the article height, so it never overlaps the
+ * footer). Below the breakpoint the grid is off and the article is full-width.
+ * The markup is `hidden` by default and only revealed by the build script once
+ * it finds >= 2 headings; the `:has()` guard keeps the grid off until then.
+ */
+$toc-width: 250px;
+$toc-gap:   24px;                       // gap between the TOC and the article
+$toc-side:  $toc-gap + $toc-width;       // one left/right gutter
+
+// On posts the wrapper grows to: centered content + a TOC-sized gutter each
+// side. Derived from $content-width so the two stay coupled.
+$toc-wrapper-max: $content-width + $toc-side * 2;
+
+// Enable the grid only when the widened wrapper fits with its normal side
+// padding ($spacing-unit), which doubles as the gap to the viewport edge.
+$toc-breakpoint: $toc-wrapper-max + $spacing-unit * 2;
+
+// Anchor jumps must clear the 61px fixed header (4px .header-bar + 56px
+// .site-header + 1px border). Kept in sync with .page-content's top padding.
+html { scroll-behavior: smooth; }
+.post-content {
+  h1, h2, h3, h4, h5, h6 { scroll-margin-top: calc(61px + 12px); }
+}
+
+.post-toc {
+  display: none; // shown only on wide viewports via the media query below
+}
+
+@media screen and (min-width: $toc-breakpoint) {
+  // Widen the wrapper and lay it out as: [ 1fr | content | 1fr ]. The flexible
+  // side columns are equal, so the article column stays centered in the
+  // viewport. `:has()` keeps this scoped to posts that actually show a TOC —
+  // the script removes `[hidden]` once it has built the list.
+  .wrapper:has(> .post-toc:not([hidden])) {
+    max-width: $toc-wrapper-max;
+    display: grid;
+    grid-template-columns: 1fr minmax(0, #{$content-width}) 1fr;
+    column-gap: $toc-gap;
+    align-items: start;
+
+    > .post-toc:not([hidden]) { grid-column: 1; }
+    > .post           { grid-column: 2; }
+  }
+
+  .post-toc:not([hidden]) {
+    display: block;
+    // Sticky within the article's height: scrolls with the page until it hits
+    // the top offset, sticks, then releases at the article's bottom edge.
+    position: sticky;
+    justify-self: end;        // hug the article, putting the gap on its right
+    width: $toc-width;
+    // Clear the 61px fixed header (4px .header-bar + 56px + 1px border).
+    top: calc(61px + #{$spacing-unit});
+    // Cap to the viewport so a long TOC scrolls on its own.
+    max-height: calc(100vh - 61px - #{$spacing-unit} * 2);
+    overflow-y: auto;
+    font-family: $serif-font-family;
+    font-size: $small-font-size;
+    line-height: 1.4;
+  }
+
+  .post-toc-title {
+    margin: 18px 0;
+    font-family: $serif-font-family;
+    font-size: 20px;
+    color: $text-color;
+  }
+
+  .post-toc-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .post-toc .toc-item {
+    margin: 0;
+  }
+
+  .post-toc .toc-h3 .toc-link { padding-left: 30px; }
+  .post-toc .toc-h4 .toc-link { padding-left: 44px; }
+
+  .post-toc .toc-link {
+    display: block;
+    padding: 8px 0 8px 16px;
+    color: $link-base-color;
+    text-decoration: none;
+    border-left: 2px solid $border-color-01;
+    word-break: break-word;
+
+    &:hover {
+      color: $link-hover-color;
+    }
+
+    &.is-active {
+      font-weight: 600;
+      border-left-color: $border-color-02;
+    }
   }
 }
