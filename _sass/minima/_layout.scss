@@ -2,9 +2,19 @@
  * Site header
  */
 .site-header {
-  position: relative;
-  width: 100%;
-  min-height: $spacing-unit * 1.865;
+  // Fixed to the viewport so it stays pinned while the document scrolls
+  // underneath. Because it is fixed (not in the scroll flow) it never picks up
+  // the rubber-band overscroll, while the document keeps its bounce for free.
+  // Sits just below the 4px .header-bar (top: 4px). .page-content adds matching
+  // padding-top so the first content is not hidden behind it.
+  position: fixed;
+  top: 4px;
+  left: 0;
+  right: 0;
+  // Header height pinned to a fixed 56px. .page-content's top padding is
+  // coupled to this value (4px .header-bar + 56px + 1px border) — keep them
+  // in sync if you change it.
+  min-height: 56px;
   line-height: $base-line-height * $base-font-size * 2.25;
   background-color: $background-color;
   border-bottom: 1px solid $border-color-01;
@@ -12,8 +22,12 @@
 
 // Decorative strip above the header. Gray by default.
 // The .rainbow variant is controlled by site.minima.rainbow_header in _config.yml
+// Fixed at the very top, sitting above the fixed .site-header.
 .header-bar {
-  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 4px;
   background-color: $border-color-03;
 }
@@ -32,7 +46,6 @@
     #613915 360px,   #613915 400px,
     #000000 400px,   #000000 440px
   );
-  background-size: 100% 4px;
   background-repeat: no-repeat;
 }
 
@@ -267,7 +280,10 @@
  * Page content
  */
 .page-content {
-  padding: $spacing-unit 0;
+  // Offset for the fixed header: 4px .header-bar + 56px .site-header
+  // + its 1px bottom border = 61px. Keeps the first content from hiding
+  // behind it. Coupled to .site-header min-height — keep in sync.
+  padding: calc(#{$spacing-unit} + 61px) 0 $spacing-unit;
   flex: 1 0 auto;
 }
 

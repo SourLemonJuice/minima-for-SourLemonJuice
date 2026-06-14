@@ -9,6 +9,21 @@ emm 我现在在用 remote-theme 而且估计也不是很想发布 gem 包，先
 
 将导航栏和页脚的宽度调大，并与正文宽度变量脱离关系
 
+### 固定头部（fixed header）
+
+`.site-header` 与其上方的装饰条 `.header-bar` 现在使用 `position: fixed`，固定吸附在视口顶部，正文在其下方滚动。\
+因为头部已脱离滚动流，它不会再受到滚动到边缘时的橡皮筋回弹（rubber-band overscroll）效果，而文档本身仍保留这个回弹。
+
+布局上的几个约定：
+
+- `.header-bar` 固定在 `top: 0`（高 4px），`.site-header` 固定在其下方的 `top: 4px`。
+- `.site-header` 的高度被固定为 `56px`。
+- `.page-content` 增加了与头部高度耦合的顶部内边距：`4px`（装饰条）+ `56px`（头部）+ `1px`（头部下边框）= `61px`，再加上原有的 `$spacing-unit`，以避免首屏内容被固定头部遮挡。
+
+注意：`.site-header` 的高度和 `.page-content` 的顶部内边距是手动耦合的（硬编码的 `61px`）。如果调整头部高度，这两处需要同步修改，相关位置都写了注释提示。
+
+> Collaborate with Claude Code
+
 ## 颜色
 
 主要的改动位置是 auto 模式下的深色模式。\
